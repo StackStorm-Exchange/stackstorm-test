@@ -1,18 +1,18 @@
 checkout:
   post:
-    - git clone -b v0 https://github.com/stackstorm-exchange/packs ~/packs
+    - git clone -b master https://github.com/stackstorm-exchange/index ~/index
 
 dependencies:
   override:
-    - ~/packs/.circle/dependencies
+    - ~/index/.circle/dependencies
 
 test:
   override:
-    - ~/packs/.circle/test
+    - ~/index/.circle/test
 
 deployment:
-  packs:
+  index:
     branch: master
     owner: StackStorm-Exchange
     commands:
-      - ~/packs/.circle/deployment
+      - ~/index/.circle/deployment
