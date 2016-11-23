@@ -5,4 +5,4 @@ class Foo(object):
     pass
 
 x = Foo()
-# x.doesnt_exist()
+x.doesnt_exist()
