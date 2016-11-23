@@ -1,5 +1,6 @@
 print "test!"
 
+
 class Foo(object):
     pass
 
