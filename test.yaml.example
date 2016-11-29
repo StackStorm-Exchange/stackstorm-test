@@ -1,7 +1,7 @@
 ---
   consumer_key: <your consumer key>
-  consumer_secret: <your consumer secret>
-  access_token: test
+  consumer_secret: b
+  access_token: a
   access_token_secret: <retrieved access secret>
   sensor:
     device_uids:

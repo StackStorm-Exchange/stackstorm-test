@@ -6,6 +6,6 @@ enabled: true
 entry_point: list_vms.py
 parameters:
   credentials:
-    type: string
+    type: broken
     description: Name of the credentials set (as defined in the config) to use.
     required: true
