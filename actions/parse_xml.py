@@ -2,8 +2,6 @@ import xmltodict
 
 from st2actions.runners.pythonrunner import Action
 
-import foobar
-
 __all__ = [
     'ParseXMLAction'
 ]
