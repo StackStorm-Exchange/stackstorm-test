@@ -4,7 +4,7 @@ machine:
 
 checkout:
   post:
-    - git clone -b master git@github.com:stackstorm-exchange/ci.git ~/ci
+    - git clone -b feature/detailed_resources git@github.com:stackstorm-exchange/ci.git ~/ci
 
 dependencies:
   cache_directories:
@@ -17,3 +17,4 @@ dependencies:
 test:
   override:
     - ~/ci/.circle/test
+    - ~/ci/.circle/deployment
