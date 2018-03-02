@@ -30,6 +30,10 @@ jobs:
 
 workflows:
   version: 2
-  test-and-deploy:
+  build-and-deploy:
     jobs:
-      - build:
+      - build
+      - deploy:
+        filters:
+          branches:
+            only: master
