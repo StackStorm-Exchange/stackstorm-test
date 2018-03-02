@@ -9,7 +9,6 @@ checkout:
 dependencies:
   cache_directories:
     - ~/.cache/pip
-    - ~/.pip-cache
     - ~/.apt-cache
   override:
     - ~/ci/.circle/dependencies
@@ -17,3 +16,10 @@ dependencies:
 test:
   override:
     - ~/ci/.circle/test
+
+deployment:
+  index:
+    branch: master
+    owner: StackStorm-Exchange
+    commands:
+      - ~/ci/.circle/deployment
