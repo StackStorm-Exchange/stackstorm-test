@@ -12,12 +12,15 @@ jobs:
             git clone -b master git@github.com:stackstorm-exchange/ci.git ~/ci
             ~/ci/.circle/dependencies
       - save_cache:
-          key: dependency-cache
+          key: v1-dependency-cache-{{ checksum "requirements.txt" }}
           paths:
             - ~/.cache/pip
-            - ~/ci
             - ~/.apt-cache
-            - ~/virtualenv
+      - persist_to_workspace:
+          root: ~
+          paths:
+            - ci
+            - virtualenv
 
   test:
     docker:
@@ -25,22 +28,24 @@ jobs:
       - image: rabbitmq:3
     steps:
       - restore_cache:
-          key: dependency-cache
+          key: v1-dependency-cache-{{ checksum "requirements.txt" }}
+      - attach_workspace:
+          at: ~
       - run: ~/ci/.circle/test
       - save_cache:
-          key: dependency-cache
+          key: v1-dependency-cache-{{ checksum "requirements.txt" }}
           paths:
             - ~/.cache/pip
-            - ~/ci
             - ~/.apt-cache
-            - ~/virtualenv
   deploy:
     docker:
       - image: circleci/python:2.7
       - image: rabbitmq:3
     steps:
       - restore_cache:
-          key: dependency-cache
+          key: v1-dependency-cache-{{ checksum "requirements.txt" }}
+      - attach_workspace:
+          at: ~
       - checkout
       - run: ~/ci/.circle/deployment
 
