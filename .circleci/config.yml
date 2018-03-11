@@ -17,6 +17,7 @@ jobs:
             - ~/.cache/pip
             - ~/ci
             - ~/.apt-cache
+            - ~/virtualenv
 
   test:
     docker:
@@ -32,6 +33,7 @@ jobs:
             - ~/.cache/pip
             - ~/ci
             - ~/.apt-cache
+            - ~/virtualenv
   deploy:
     docker:
       - image: circleci/python:2.7
