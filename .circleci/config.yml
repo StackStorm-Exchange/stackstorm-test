@@ -11,12 +11,12 @@ jobs:
           command: |
             git clone -b master git@github.com:stackstorm-exchange/ci.git ~/ci
             ~/ci/.circle/dependencies
-     - save_cache:
-        key: dependency-cache
-        paths:
-          - ~/.cache/pip
-          - ~/ci
-          - ~/.apt-cache
+      - save_cache:
+          key: dependency-cache
+          paths:
+            - ~/.cache/pip
+            - ~/ci
+            - ~/.apt-cache
 
   test:
     docker:
@@ -24,21 +24,21 @@ jobs:
       - image: rabbitmq:3
     steps:
       - restore_cache:
-         key: dependency-cache
+          key: dependency-cache
       - run: ~/ci/.circle/test
-     - save_cache:
-        key: dependency-cache
-        paths:
-          - ~/.cache/pip
-          - ~/ci
-          - ~/.apt-cache
+      - save_cache:
+          key: dependency-cache
+          paths:
+            - ~/.cache/pip
+            - ~/ci
+            - ~/.apt-cache
   deploy:
     docker:
       - image: circleci/python:2.7
       - image: rabbitmq:3
     steps:
       - restore_cache:
-         key: dependency-cache
+          key: dependency-cache
       - checkout
       - run: ~/ci/.circle/deployment
 
