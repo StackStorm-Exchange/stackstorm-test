@@ -27,6 +27,7 @@ jobs:
       - image: circleci/python:2.7
       - image: rabbitmq:3
     steps:
+      - checkout
       - restore_cache:
           key: v1-dependency-cache-{{ checksum "requirements.txt" }}
       - attach_workspace:
@@ -42,11 +43,11 @@ jobs:
       - image: circleci/python:2.7
       - image: rabbitmq:3
     steps:
+      - checkout
       - restore_cache:
           key: v1-dependency-cache-{{ checksum "requirements.txt" }}
       - attach_workspace:
-          at: ~
-      - checkout
+          at: /home/circleci
       - run: ~/ci/.circle/deployment
 
 workflows:
