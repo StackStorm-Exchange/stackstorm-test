@@ -30,7 +30,7 @@ jobs:
       - restore_cache:
           key: v1-dependency-cache-{{ checksum "requirements.txt" }}
       - attach_workspace:
-          at: ~
+          at: /home/circleci
       - run: ~/ci/.circle/test
       - save_cache:
           key: v1-dependency-cache-{{ checksum "requirements.txt" }}
