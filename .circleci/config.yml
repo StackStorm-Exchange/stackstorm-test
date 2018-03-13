@@ -7,7 +7,7 @@ jobs:
       - image: rabbitmq:3
     steps:
       - checkout
-      - restore_cache
+      - restore_cache:
           key: v1-dependency-cache-{{ checksum "requirements.txt" }}
       - run:
           name: Download dependencies
