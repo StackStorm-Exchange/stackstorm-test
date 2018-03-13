@@ -5,6 +5,7 @@ jobs:
     docker:
       - image: circleci/python:2.7
       - image: rabbitmq:3
+      - image: mongo:3.4
     steps:
       - checkout
       - restore_cache:
@@ -32,7 +33,6 @@ jobs:
   deploy:
     docker:
       - image: circleci/python:2.7
-      - image: rabbitmq:3
     steps:
       - checkout
       - restore_cache:
