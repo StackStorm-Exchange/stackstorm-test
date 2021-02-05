@@ -8,3 +8,5 @@ keywords:
 version: 1.0.0
 author : st2-dev
 email : info@stackstorm.com
+python_versions:
+  - "3"
