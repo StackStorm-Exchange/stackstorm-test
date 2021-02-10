@@ -62,6 +62,8 @@ jobs:
 
     environment:
       VIRTUALENV_DIR: "~/virtualenv"
+      # This pack should not be on the index
+      SKIP_INDEX: "true"
 
     steps:
       - checkout
