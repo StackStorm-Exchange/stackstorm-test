@@ -1,4 +1,4 @@
-print "test!"
+print("test!")
 
 
 class Foo(object):
