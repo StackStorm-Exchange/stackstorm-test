@@ -11,6 +11,7 @@ jobs:
   build_and_test:
     name: 'Build and Test'
     uses: StackStorm-Exchange/ci/.github/workflows/pack-build_and_test.yaml@gha
-    #with:
-    #  apt-cache-version: v0
-    #  py-cache-version: v0
+    with:
+      enable-common-libs: true
+      #apt-cache-version: v0
+      #py-cache-version: v0
