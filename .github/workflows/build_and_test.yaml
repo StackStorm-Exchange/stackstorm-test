@@ -4,12 +4,8 @@ on: push
 
 jobs:
   build_and_test:
-    runs-on: ubuntu-latest
     name: 'Build and Test'
-    steps:
-      # eventually replace @gha with @master
-      - name: Build and Test
-        uses: StackStorm-Exchange/ci/.github/workflows/pack-build_and_test.yaml@gha
-        #with:
-        #  apt-cache-version: v0
-        #  py-cache-version: v0
+    uses: StackStorm-Exchange/ci/.github/workflows/pack-build_and_test.yaml@gha
+    #with:
+    #  apt-cache-version: v0
+    #  py-cache-version: v0
