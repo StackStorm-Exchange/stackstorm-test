@@ -1,0 +1,12 @@
+name: Tag Release
+
+on:
+  push:
+    branches:
+      # the default branch
+      - aaa
+
+jobs:
+  tag_release:
+    name: Tag Release
+    uses: StackStorm-Exchange/ci/.github/workflows/pack-tag_release.yaml@gha

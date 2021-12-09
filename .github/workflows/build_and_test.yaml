@@ -1,0 +1,20 @@
+name: CI
+
+on:
+  push:
+    branches:
+      # the default branch
+      - aaa
+  pull_request:
+  schedule:
+    # NOTE: We run this weekly at 1 am UTC on every Saturday
+    - cron:  '0 1 * * 6'
+
+jobs:
+  build_and_test:
+    name: 'Build and Test'
+    uses: StackStorm-Exchange/ci/.github/workflows/pack-build_and_test.yaml@gha
+    with:
+      enable-common-libs: true
+      #apt-cache-version: v0
+      #py-cache-version: v0

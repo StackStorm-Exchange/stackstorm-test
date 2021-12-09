@@ -88,12 +88,12 @@ workflows:
   build_test_deploy_on_push:
     jobs:
       - build_and_test_python36
-      - deploy:
-          requires:
-            - build_and_test_python36
-          filters:
-            branches:
-              only: aaa
+      #- deploy:
+      #    requires:
+      #      - build_and_test_python36
+      #    filters:
+      #      branches:
+      #        only: aaa
   build_test_weekly:
     jobs:
       - build_and_test_python36
