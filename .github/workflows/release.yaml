@@ -8,12 +8,16 @@ on:
 
 permissions:
   contents: write
-  metadata: write
+
+  # it seems github doesn't allow the default GITHUB_TOKEN to have metadata: write
+  #metadata: write
+  # But we need something that is scoped to only the current repo,
+  # so a PAT is not a valid option.
 
 jobs:
   tag_release:
     name: Tag Release
     uses: StackStorm-Exchange/ci/.github/workflows/pack-tag_release.yaml@gha
-  repo_metadata:
-    name: Repo Metadata
-    uses: StackStorm-Exchange/ci/.github/workflows/pack-repo_meta.yaml@gha
+  #repo_metadata:
+  #  name: Repo Metadata
+  #  uses: StackStorm-Exchange/ci/.github/workflows/pack-repo_meta.yaml@gha
