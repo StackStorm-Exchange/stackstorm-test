@@ -6,6 +6,9 @@ on:
       # the default branch
       - aaa
 
+permissions:
+  contents: write
+
 jobs:
   tag_release:
     name: Tag Release
