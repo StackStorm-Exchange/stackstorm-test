@@ -1,4 +1,4 @@
-name: Tag Release
+name: Push Updates
 
 on:
   push:
@@ -13,3 +13,6 @@ jobs:
   tag_release:
     name: Tag Release
     uses: StackStorm-Exchange/ci/.github/workflows/pack-tag_release.yaml@gha
+  repo_metadata:
+    name: Repo Metadata
+    uses: StackStorm-Exchange/ci/.github/workflows/pack-repo_meta.yaml@gha
