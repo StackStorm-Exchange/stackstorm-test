@@ -1,4 +1,4 @@
-name: Push Updates
+name: Release
 
 on:
   push:
@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: write
+  metadata: write
 
 jobs:
   tag_release:
