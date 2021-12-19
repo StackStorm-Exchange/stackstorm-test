@@ -13,7 +13,7 @@ on:
 jobs:
   build_and_test:
     name: 'Build and Test'
-    uses: StackStorm-Exchange/ci/.github/workflows/pack-build_and_test.yaml@gha
+    uses: StackStorm-Exchange/ci/.github/workflows/pack-build_and_test.yaml@master
     with:
       enable-common-libs: true
       #apt-cache-version: v0

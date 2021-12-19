@@ -17,7 +17,7 @@ permissions:
 jobs:
   tag_release:
     name: Tag Release
-    uses: StackStorm-Exchange/ci/.github/workflows/pack-tag_release.yaml@gha
+    uses: StackStorm-Exchange/ci/.github/workflows/pack-tag_release.yaml@master
   #repo_metadata:
   #  name: Repo Metadata
-  #  uses: StackStorm-Exchange/ci/.github/workflows/pack-repo_meta.yaml@gha
+  #  uses: StackStorm-Exchange/ci/.github/workflows/pack-repo_meta.yaml@master
