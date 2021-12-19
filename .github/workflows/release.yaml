@@ -15,9 +15,15 @@ permissions:
   # so a PAT is not a valid option.
 
 jobs:
+  build_and_test:
+    name: 'Build and Test'
+    uses: ./.github/workflows/build_and_test.yaml@aaa
+
   tag_release:
+    needs: build_and_test
     name: Tag Release
     uses: StackStorm-Exchange/ci/.github/workflows/pack-tag_release.yaml@master
+
   #repo_metadata:
   #  name: Repo Metadata
   #  uses: StackStorm-Exchange/ci/.github/workflows/pack-repo_meta.yaml@master

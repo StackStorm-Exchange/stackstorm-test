@@ -1,10 +1,7 @@
 name: CI
 
 on:
-  push:
-    branches:
-      # the default branch
-      - aaa
+  workflow_call: # this gets called on push before tagging releases.
   pull_request:
   schedule:
     # NOTE: We run this weekly at 1 am UTC on every Saturday
